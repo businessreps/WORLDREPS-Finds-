@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WorldReps Finds – Catálogo de ropa, calzado y más</title>
+  <meta name="description" content="Descubre camisetas, pantalones, zapatillas, bolsos, accesorios y electrónica en WorldReps Finds. Tu catálogo rápido y fácil." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Cabecera -->
+  <header class="hero">
+    <div class="container brand">
+      <h1><span class="logo">WR</span> <span class="title">WorldReps <strong>Finds</strong></span></h1>
+    </div>
+    <!-- Buscador -->
+    <div class="container search-wrap">
+      <input id="searchInput" type="search" placeholder="Buscar productos…" aria-label="Buscar" />
+    </div>
+  </header>
+
+  <!-- Productos -->
+  <main class="container">
+    <section id="productsGrid" class="grid"></section>
+    <p id="emptyState" class="empty" hidden>No hay resultados todavía.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 WorldReps Finds – Todos los derechos reservados.</p>
+      <div class="socials">
+        <a href="#">Instagram</a> | <a href="#">Telegram</a> | <a href="#">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

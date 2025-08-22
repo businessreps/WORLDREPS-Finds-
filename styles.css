@@ -1,0 +1,67 @@
+:root {
+  --blue: #1d4ed8;
+  --sky: #38bdf8;
+  --dark: #0f172a;
+  --aqua: #22d3ee;
+  --white: #ffffff;
+  --red: #dc2626;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: var(--white);
+  color: var(--dark);
+}
+
+/* Cabecera */
+.hero {
+  background: radial-gradient(circle at top, var(--sky), var(--blue));
+  color: var(--white);
+  text-align: center;
+  padding: 40px 20px;
+}
+.logo {
+  background: var(--aqua);
+  color: var(--dark);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.title { font-family: "Playfair Display", serif; font-size: 28px; }
+
+/* Buscador */
+.search-wrap {
+  margin-top: 20px;
+}
+.search-wrap input {
+  padding: 12px;
+  width: min(90%, 400px);
+  border: 1px solid var(--sky);
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+/* Productos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+.empty { text-align: center; color: #64748b; }
+
+/* Footer */
+.footer {
+  background: var(--red);
+  color: var(--white);
+  padding: 20px 10px;
+  text-align: center;
+}
+.footer a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 5px;
+}
+.footer a:hover { color: var(--aqua); }
