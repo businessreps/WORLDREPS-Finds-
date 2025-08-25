@@ -1,67 +1,33 @@
 :root {
-  --blue: #1d4ed8;
-  --sky: #38bdf8;
-  --dark: #0f172a;
-  --aqua: #22d3ee;
-  --white: #ffffff;
-  --red: #dc2626;
+  --bg:#0b0d12; --card:#121621; --txt:#e5e7ef; --brand:#6366f1;
 }
 
-* { box-sizing: border-box; }
 body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  background: var(--white);
-  color: var(--dark);
+  margin:0; background:var(--bg); color:var(--txt); font-family:sans-serif;
 }
+header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:1rem; background:#111827;
+}
+.logo {width:30px; height:30px; background:var(--brand); border-radius:50%;}
+.menu-btn {background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;}
 
-/* Cabecera */
-.hero {
-  background: radial-gradient(circle at top, var(--sky), var(--blue));
-  color: var(--white);
-  text-align: center;
-  padding: 40px 20px;
-}
-.logo {
-  background: var(--aqua);
-  color: var(--dark);
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-weight: bold;
-}
-.title { font-family: "Playfair Display", serif; font-size: 28px; }
-
-/* Buscador */
-.search-wrap {
-  margin-top: 20px;
-}
-.search-wrap input {
-  padding: 12px;
-  width: min(90%, 400px);
-  border: 1px solid var(--sky);
-  border-radius: 10px;
-  font-size: 16px;
-}
-
-/* Productos */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px 0;
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem; padding:1rem;
 }
-.empty { text-align: center; color: #64748b; }
+.card {
+  background:var(--card); padding:1rem; border-radius:8px;
+}
 
-/* Footer */
-.footer {
-  background: var(--red);
-  color: var(--white);
-  padding: 20px 10px;
-  text-align: center;
+/* Sidebar */
+#sidebar {
+  position:fixed; top:0; right:-100%; width:250px; height:100%;
+  background:#111827; padding:1rem; transition:.3s ease; z-index:1000;
+  display:flex; flex-direction:column; gap:1rem;
 }
-.footer a {
-  color: var(--white);
-  text-decoration: none;
-  margin: 0 5px;
+#sidebar.active { right:0; }
+.close-btn {align-self:flex-end; background:none; border:none; color:white; font-size:1.2rem;}
+#sidebar input, #sidebar select {
+  padding:.6rem; border-radius:6px; border:none; width:100%;
 }
-.footer a:hover { color: var(--aqua); }

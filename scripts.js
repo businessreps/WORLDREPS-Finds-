@@ -1,38 +1,40 @@
-// Aquí guardaremos los productos
-const productos = [];
+// Sidebar toggle
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+const closeSidebar = document.getElementById("closeSidebar");
 
-// Función para renderizar productos
-function renderProductos(lista) {
-  const grid = document.getElementById("productsGrid");
-  const empty = document.getElementById("emptyState");
+menuBtn.addEventListener("click", () => sidebar.classList.add("active"));
+closeSidebar.addEventListener("click", () => sidebar.classList.remove("active"));
 
-  grid.innerHTML = "";
-  if (lista.length === 0) {
-    empty.hidden = false;
-    return;
-  }
-  empty.hidden = true;
+// Render categories into the select
+function renderCategories() {
+  const container = document.getElementById("categoryFilter");
+  container.innerHTML = '<option value="">All Categories</option>';
 
-  lista.forEach(p => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${p.imagen}" alt="${p.nombre}" style="width:100%;border-radius:8px;">
-      <h3>${p.nombre}</h3>
-      <p>${p.precio}</p>
-      <a href="${p.weidianLink}" target="_blank" rel="noopener noreferrer">Weidian</a> |
-      <a href="${p.cnfansLink}" target="_blank" rel="noopener noreferrer">CNFans</a>
-    `;
-    grid.appendChild(card);
+  categories.forEach(cat => {
+    const optGroup = document.createElement("optgroup");
+    optGroup.label = cat.name;
+
+    cat.subcategories.forEach(sub => {
+      const option = document.createElement("option");
+      option.value = sub;
+      option.textContent = sub;
+      optGroup.appendChild(option);
+    });
+
+    container.appendChild(optGroup);
   });
 }
 
-// Búsqueda
-document.getElementById("searchInput").addEventListener("input", e => {
-  const q = e.target.value.toLowerCase();
-  const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(q));
-  renderProductos(filtrados);
-});
+document.addEventListener("DOMContentLoaded", () => {
+  renderCategories();
 
-// Inicial
-renderProductos(productos);
+  // placeholders for your future filtering logic
+  document.getElementById("categoryFilter").addEventListener("change", e => {
+    console.log("Selected category:", e.target.value);
+  });
+
+  document.getElementById("mobileSearch").addEventListener("input", e => {
+    console.log("Search query:", e.target.value);
+  });
+});
