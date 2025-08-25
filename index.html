@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finds WorldReps</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Hero con galaxia y planeta -->
+  <section id="hero">
+    <canvas id="galaxy" width="1920" height="360" aria-label="Animación de planeta"></canvas>
+    <div class="hero-content">
+      <h1>Finds WorldReps</h1>
+    </div>
+  </section>
+
+  <!-- Header con menú y traductor -->
+  <header>
+    <div class="brand">
+      <span class="dot"></span>
+      <h2>Finds WorldReps</h2>
+    </div>
+    <div id="translate"></div>
+    <button id="menuBtn" class="menu-btn" aria-label="Abrir menú">
+      <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Sidebar menú -->
+  <aside id="sidebar" aria-label="Categorías">
+    <button id="closeSidebar" class="close-btn" aria-label="Cerrar menú">✖</button>
+    <input type="search" id="mobileSearch" placeholder="Buscar productos..." />
+    <ul id="categoryMenu"></ul>
+  </aside>
+
+  <!-- Catálogo -->
+  <main>
+    <section id="productGrid" class="grid"></section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Finds WorldReps</p>
+    <div class="socials">
+      <a href="https://t.me/addlist/aYLeX4pNQyhlMDQ8" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://www.instagram.com/worldrepsss/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@planetfashionx?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </footer>
+
+  <script src="categories.js"></script>
+  <script src="scripts.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'es'}, 'translate');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
