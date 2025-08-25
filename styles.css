@@ -1,0 +1,37 @@
+/* Base */
+:root{--ink:#111;--muted:#666;--line:#e5e7eb;--brand:#4f46e5;--footer-bg:#000;--footer-fg:#fff;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}
+a{color:#0a58f7;text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Hero */
+#hero{position:relative;height:480px;background:#000;overflow:hidden}
+#galaxy{position:absolute;inset:0;width:100%;height:100%}
+.hero-content{position:relative;z-index:2;height:100%;display:flex;align-items:center;justify-content:center;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.hero-content h1{font-size:clamp(28px,5vw,56px);margin:0}
+
+/* Header */
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .dot{width:14px;height:14px;border-radius:50%;background:var(--brand)}
+.menu-btn{background:#fff;border:1px solid var(--line);border-radius:10px;padding:6px 8px;cursor:pointer;color:var(--ink)}
+.menu-btn:hover{background:#f9fafb}
+
+/* Sidebar */
+#sidebar{position:fixed;top:0;right:-100%;width:300px;height:100%;background:#fff;border-left:1px solid var(--line);box-shadow:-8px 0 24px rgba(0,0,0,.12);padding:16px;z-index:50;transition:right .25s ease;overflow:auto}
+#sidebar.active{right:0}
+.close-btn{border:none;background:transparent;font-size:18px;float:right;cursor:pointer}
+#mobileSearch{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;margin:8px 0 12px}
+#categoryMenu{list-style:none;margin:0;padding:0}
+#categoryMenu>li{margin:10px 0}
+#categoryMenu>li>a{font-weight:700;color:var(--ink)}
+#categoryMenu ul{margin:6px 0 0 12px;padding-left:10px;border-left:2px solid var(--line)}
+#categoryMenu ul li a{color:var(--muted);font-weight:500}
+
+/* Grid placeholder */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;padding:16px}
+
+/* Footer */
+footer{border-top:1px solid #111;background:var(--footer-bg);color:var(--footer-fg);padding:18px;text-align:center}
+footer .socials a{margin:0 10px;color:var(--footer-fg)}
